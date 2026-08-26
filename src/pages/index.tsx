@@ -36,7 +36,7 @@ const PROBLEMS = [
   },
   {
     title: 'Enterprise features behind a paywall',
-    body: 'SSO, RBAC, and PR-level enforcement are routinely gated behind paid tiers in existing vulnerability management platforms — even for small teams.',
+    body: 'SSO, RBAC, and PR-level enforcement are routinely gated behind paid tiers in existing vulnerability management platforms; even for small teams.',
   },
   {
     title: 'Finding fatigue',
@@ -51,7 +51,7 @@ const PROBLEMS = [
 const SOLUTIONS = [
   {
     title: 'One platform, native scanners',
-    body: 'Semgrep, Trivy, Gitleaks, gosec, and nuclei run natively — Toleman manages tool installs and dispatches real scans, it doesn’t just parse someone else’s report.',
+    body: 'Semgrep, Trivy, Gitleaks, gosec, and nuclei run natively; Toleman manages tool installs and dispatches real scans, it doesn’t just parse someone else’s report.',
   },
   {
     title: 'Real deduplication',
@@ -59,19 +59,19 @@ const SOLUTIONS = [
   },
   {
     title: 'Context-aware prioritization',
-    body: 'Severity × target criticality, boosted by live EPSS exploit-prediction and CISA KEV known-exploited data — not a static severity label.',
+    body: 'Severity × target criticality, boosted by live EPSS exploit-prediction and CISA KEV known-exploited data; not a static severity label.',
   },
   {
     title: 'PR Guardrail, for real',
-    body: 'Diff-scans a pull request for net-new findings and enforces block/alert/disabled per target, group, or workspace — with an accept-risk approval workflow.',
+    body: 'Diff-scans a pull request for net-new findings and enforces block/alert/disabled per target, group, or workspace; with an accept-risk approval workflow.',
   },
   {
     title: '100% free, always',
-    body: 'SSO, RBAC, SLA rules, policy-as-code, Slack/Jira integration — every feature ships free. No paid tier, no feature gating, ever.',
+    body: 'SSO, RBAC, SLA rules, policy-as-code, Slack/Jira integration; every feature ships free. No paid tier, no feature gating, ever.',
   },
   {
     title: 'Enterprise-grade polish',
-    body: 'A modern, developer-first UI with dark/light themes — built to feel like a premium product, not a weekend side project.',
+    body: 'A modern, developer-first UI with dark/light themes; built to feel like a premium product, not a weekend side project.',
   },
 ];
 
@@ -141,7 +141,7 @@ export default function Home(): ReactNode {
             <Heading as="h2">Ready to try it?</Heading>
             <p style={{color: 'var(--ifm-color-content-secondary)', marginBottom: '1.5rem'}}>
               Clone it, run one command, and scan your first repo in minutes. No waitlist, no gated
-              access — Toleman is self-hosted and free from day one.
+              access; Toleman is self-hosted and free from day one.
             </p>
             <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
               <Link className="button button--primary button--lg" to="/documentation/getting-started/quickstart">

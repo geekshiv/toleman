@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Quickstart
 
-Toleman is 100% free and open-source — no paid tiers, no feature gating. This page gets you from `git clone` to a running instance.
+Toleman is 100% free and open-source, no paid tiers, no feature gating. This page gets you from `git clone` to a running instance.
 
 ## Option A: Docker Compose (recommended)
 
@@ -19,10 +19,10 @@ docker compose up --build
 
 This starts five containers:
 
-- **postgres** (16) and **redis** (7) — each gated by a real healthcheck
-- **backend** — FastAPI on port 8000, with Semgrep/Trivy/Gitleaks/gosec pre-installed
-- **celery-worker** — same image as backend, runs async scan/discovery/SBOM/PR Guardrail jobs
-- **frontend** — Next.js on port 3000
+- **postgres** (16) and **redis** (7); each gated by a real healthcheck
+- **backend**: FastAPI on port 8000, with Semgrep/Trivy/Gitleaks/gosec pre-installed
+- **celery-worker**: same image as backend, runs async scan/discovery/SBOM/PR Guardrail jobs
+- **frontend**: Next.js on port 3000
 
 Once it's up:
 
@@ -32,7 +32,7 @@ Once it's up:
 | Backend API | http://localhost:8000 (`/docs` for OpenAPI UI, `/health` for liveness) |
 | Scanner sanity check | `curl http://localhost:8000/api/tools/health` |
 
-Sign in with the seeded admin account: `ADMIN_EMAIL`/`ADMIN_PASSWORD` from `.env` (defaults to `admin@toleman.local` / `changeme123` — **change this before any non-local use**).
+Sign in with the seeded admin account: `ADMIN_EMAIL`/`ADMIN_PASSWORD` from `.env` (defaults to `admin@toleman.local` / `changeme123`, **change this before any non-local use**).
 
 To stop: `docker compose down` (add `-v` to also drop the Postgres volume).
 
@@ -57,7 +57,7 @@ sudo systemctl start postgresql redis-server
 # Semgrep/gosec aren't in apt; install via their own installers:
 python3.12 -m pip install --user semgrep
 go install github.com/securego/gosec/v2/cmd/gosec@latest   # requires Go
-# Trivy and Gitleaks ship their own install scripts -- see each project's
+# Trivy and Gitleaks ship their own install scripts; see each project's
 # release page for the current version:
 curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
 curl -sfL https://raw.githubusercontent.com/gitleaks/gitleaks/master/scripts/install.sh | sh -s -- -b /usr/local/bin
@@ -67,7 +67,7 @@ Other distros: same five tools, swap `apt-get` for your package manager (e.g. Fe
 
 **Windows**
 
-The scanner CLIs are Linux/macOS-first tools with inconsistent native Windows support. **Use WSL2**: install a WSL2 Ubuntu distro, clone the repo inside the WSL filesystem (not a Windows path — I/O performance suffers badly across the boundary), and follow the Linux steps above. Prefer Docker Compose (Option A) if you'd rather skip WSL2 setup.
+The scanner CLIs are Linux/macOS-first tools with inconsistent native Windows support. **Use WSL2**: install a WSL2 Ubuntu distro, clone the repo inside the WSL filesystem (not a Windows path; I/O performance suffers badly across the boundary), and follow the Linux steps above. Prefer Docker Compose (Option A) if you'd rather skip WSL2 setup.
 
 Create the database:
 
@@ -92,7 +92,7 @@ Async work (scans/discovery/SBOM/PR Guardrail) requires the Celery worker:
 celery -A app.tasks.celery_app worker -Q scans --loglevel=info
 ```
 
-The backend's startup hook runs `alembic upgrade head` automatically — no separate migration step needed just to run the app. See [Architecture Overview](./architecture-overview.md) for when you *do* need to touch Alembic directly.
+The backend's startup hook runs `alembic upgrade head` automatically; no separate migration step needed just to run the app. See [Architecture Overview](./architecture-overview.md) for when you *do* need to touch Alembic directly.
 
 ### Frontend
 
@@ -102,15 +102,15 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000 — redirects to `/login`.
+Open http://localhost:3000, redirects to `/login`.
 
 ![Login screen](/img/screenshots/login.png)
 
 ## First steps after signing in
 
 1. Bootstrap or confirm your workspace (Settings → Workspaces).
-2. Connect GitHub — see [Connecting GitHub](../github-integration/connecting-github.md).
-3. Add a target repo and run your first scan — see [Scanners](../scanning/scanners.md).
+2. Connect GitHub; see [Connecting GitHub](../github-integration/connecting-github.md).
+3. Add a target repo and run your first scan; see [Scanners](../scanning/scanners.md).
 
 Once you're in, the dashboard is your home base:
 

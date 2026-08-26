@@ -22,5 +22,5 @@ jobs:
       - name: Type-check
         run: npx tsc --noEmit
 
-      - name: "Build (catches broken links -- onBrokenLinks: 'throw')"
+      - name: "Build (catches broken links via onBrokenLinks: 'throw')"
         run: npm run build

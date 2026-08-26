@@ -17,9 +17,9 @@ sidebar_position: 2
 backend/app/
   api/        one file per resource, FastAPI router
   core/       shared logic: db engine, crypto, scoring, dedup, scanner HTTP clients, Celery app
-  models/     models.py — every SQLModel table + enum
+  models/     models.py: every SQLModel table + enum
   scanners/   runner.py (subprocess dispatch), discovery.py (route extraction), parsers.py (tool output → findings)
-  tasks/      Celery tasks — scan/discovery/sbom/pr_guardrail all run async via .delay()
+  tasks/      Celery tasks; scan/discovery/sbom/pr_guardrail all run async via .delay()
 backend/alembic/versions/   one migration file per schema change
 
 frontend/src/app/(dashboard)/   one directory per sidebar page
@@ -31,7 +31,7 @@ frontend/src/lib/api.ts         single API client
 
 `Organization` → `Workspace` → `Target` (a scanned repo) → `Finding` / `Scan` / `ApiEndpoint` / `SbomComponent`
 
-- Every `User` has a **global** role (admin/user/viewer/developer/security_engineer) — admins bypass all workspace scoping.
+- Every `User` has a **global** role (admin/user/viewer/developer/security_engineer), admins bypass all workspace scoping.
 - `WorkspaceMembership` layers a **workspace-scoped** role on top of the global one; non-admin visibility on list endpoints is filtered by this.
 - `PRGuardrailScan` → `PRGuardrailFinding` are kept separate from the main `Finding` table so PR-branch noise doesn't pollute default-branch posture.
 
@@ -46,7 +46,7 @@ Long-running work (git clone + scanner subprocess, GitHub API calls) never runs 
 
 ## Database migrations
 
-The backend's startup hook (`app/core/db.py:init_db`) runs `alembic upgrade head` automatically on every start — there's no manual migration step to just run the app.
+The backend's startup hook (`app/core/db.py:init_db`) runs `alembic upgrade head` automatically on every start; there's no manual migration step to just run the app.
 
 You only touch Alembic directly when you change `backend/app/models/models.py`:
 
@@ -55,8 +55,8 @@ cd backend
 alembic revision --autogenerate -m "describe the schema change"
 ```
 
-Always review the generated file under `alembic/versions/` before committing — autogenerate is a starting point (it can miss column renames, seeing them as drop+add).
+Always review the generated file under `alembic/versions/` before committing; autogenerate is a starting point (it can miss column renames, seeing them as drop+add).
 
 ## Philosophy
 
-Toleman is deliberately **100% free** — every feature (SSO, RBAC, PR enforcement, etc.) ships without a paid tier. It's also **operational, not just aggregating**: it natively runs scanners, manages tool installs, and enforces block/alert modes in CI/CD, rather than just ingesting other tools' output.
+Toleman is deliberately **100% free**, every feature (SSO, RBAC, PR enforcement, etc.) ships without a paid tier. It's also **operational, not just aggregating**: it natively runs scanners, manages tool installs, and enforces block/alert modes in CI/CD, rather than just ingesting other tools' output.

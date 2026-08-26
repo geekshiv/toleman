@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # MCP Server
 
-Connect an MCP-compatible client (Claude Code, Claude Desktop, etc.) directly to your Toleman instance — list targets, browse findings, check scan status, and trigger scans from within a conversation.
+Connect an MCP-compatible client (Claude Code, Claude Desktop, etc.) directly to your Toleman instance, list targets, browse findings, check scan status, and trigger scans from within a conversation.
 
-Lives in [`mcp-server/`](https://github.com/toleman-platform/toleman-platform/tree/main/mcp-server) in the main repo, as a **standalone process** with its own Python environment — not embedded in the backend. The official `mcp` package requires a newer Starlette/Pydantic than this project's pinned FastAPI/SQLModel versions tolerate, so it runs separately rather than forcing a risky upgrade of the core web stack. It's a thin client over the [Public API](./api.md) — same auth, same tools' worth of surface, just callable from an MCP conversation instead of `curl`.
+Lives in [`mcp-server/`](https://github.com/toleman-platform/toleman-platform/tree/main/mcp-server) in the main repo, as a **standalone process** with its own Python environment; not embedded in the backend. The official `mcp` package requires a newer Starlette/Pydantic than this project's pinned FastAPI/SQLModel versions tolerate, so it runs separately rather than forcing a risky upgrade of the core web stack. It's a thin client over the [Public API](./api.md), same auth, same tools' worth of surface, just callable from an MCP conversation instead of `curl`.
 
 ## Setup
 
@@ -45,4 +45,4 @@ Create a personal access token: **Settings → Workspace → API Tokens** (see [
 }
 ```
 
-Runs over stdio — the client launches it as a subprocess, it's not a long-running network service.
+Runs over stdio, the client launches it as a subprocess, it's not a long-running network service.

@@ -10,7 +10,7 @@ Toleman emits **CycloneDX 1.6**, which added first-class machine-learning compon
 
 ## How it is generated
 
-Extraction runs during the existing SBOM generation for a target — the checkout is already there, so an AIBOM costs no extra clone and no extra tooling. Generate an SBOM for a target and its AIBOM is populated alongside it.
+Extraction runs during the existing SBOM generation for a target; the checkout is already there, so an AIBOM costs no extra clone and no extra tooling. Generate an SBOM for a target and its AIBOM is populated alongside it.
 
 Detected references include Hugging Face models (`from_pretrained`, `hf_hub_download`), hosted API models (`model="gpt-5"`), and datasets (`load_dataset`).
 
@@ -35,4 +35,4 @@ Those are materially different claims, and only the second is true. A compliance
 
 The same distinction applies to the view itself: a target whose AIBOM has never been generated shows *"No AIBOM generated yet"*, not an empty list. A repository nobody has analysed is unknown, not clean.
 
-Components with no pinned revision are flagged `unpinned` — the referenced weights can change after you review them, which is the model-supply-chain equivalent of an unpinned dependency.
+Components with no pinned revision are flagged `unpinned`; the referenced weights can change after you review them, which is the model-supply-chain equivalent of an unpinned dependency.
