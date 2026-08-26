@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # AI/ML repository security
 
-Conventional SAST and SCA are blind to the parts of an AI repository where risk actually concentrates. Rikugan adds four things for repos that build AI products or carry AI features.
+Conventional SAST and SCA are blind to the parts of an AI repository where risk actually concentrates. Toleman adds four things for repos that build AI products or carry AI features.
 
 ## Why a separate category
 
@@ -39,7 +39,7 @@ The finding points at the file, not a line number. A fabricated line offset into
 
 ## LLM code rules (semgrep-llm)
 
-A curated OWASP LLM Top 10 ruleset shipped inside Rikugan rather than pulled from a hosted registry, so results are reproducible and work offline.
+A curated OWASP LLM Top 10 ruleset shipped inside Toleman rather than pulled from a hosted registry, so results are reproducible and work offline.
 
 Covers:
 

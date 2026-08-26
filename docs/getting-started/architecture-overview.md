@@ -59,4 +59,4 @@ Always review the generated file under `alembic/versions/` before committing —
 
 ## Philosophy
 
-Rikugan is deliberately **100% free** — every feature (SSO, RBAC, PR enforcement, etc.) ships without a paid tier. It's also **operational, not just aggregating**: it natively runs scanners, manages tool installs, and enforces block/alert modes in CI/CD, rather than just ingesting other tools' output.
+Toleman is deliberately **100% free** — every feature (SSO, RBAC, PR enforcement, etc.) ships without a paid tier. It's also **operational, not just aggregating**: it natively runs scanners, manages tool installs, and enforces block/alert modes in CI/CD, rather than just ingesting other tools' output.

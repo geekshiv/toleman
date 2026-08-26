@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Rikugan',
+  title: 'Toleman',
   tagline: 'The free, open-source DevSecOps vulnerability management platform',
   favicon: 'img/favicon.svg',
 
@@ -14,10 +14,10 @@ const config: Config = {
   },
 
   url: 'https://geekshiv.github.io',
-  baseUrl: '/rikugan/',
+  baseUrl: '/toleman/',
 
   organizationName: 'geekshiv',
-  projectName: 'rikugan',
+  projectName: 'toleman',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -35,7 +35,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'documentation',
-          editUrl: 'https://github.com/geekshiv/rikugan/tree/main/',
+          editUrl: 'https://github.com/geekshiv/toleman/tree/main/',
         },
         blog: false,
         theme: {
@@ -46,15 +46,15 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/rikugan-social-card.png',
+    image: 'img/toleman-social-card.png',
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Rikugan',
+      title: 'Toleman',
       logo: {
-        alt: 'Rikugan',
+        alt: 'Toleman',
         src: 'img/brand-mark.svg',
       },
       items: [
@@ -65,7 +65,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/geekshiv/rikugan-platform',
+          href: 'https://github.com/toleman-platform/toleman-platform',
           label: 'GitHub',
           position: 'right',
         },
@@ -85,18 +85,18 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {label: 'GitHub Issues', href: 'https://github.com/geekshiv/rikugan-platform/issues'},
-            {label: 'Discussions', href: 'https://github.com/geekshiv/rikugan-platform/discussions'},
+            {label: 'GitHub Issues', href: 'https://github.com/toleman-platform/toleman-platform/issues'},
+            {label: 'Discussions', href: 'https://github.com/toleman-platform/toleman-platform/discussions'},
           ],
         },
         {
           title: 'More',
           items: [
-            {label: 'GitHub Repo', href: 'https://github.com/geekshiv/rikugan-platform'},
+            {label: 'GitHub Repo', href: 'https://github.com/toleman-platform/toleman-platform'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Rikugan. 100% free & open-source.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Toleman. 100% free & open-source.`,
     },
     prism: {
       theme: prismThemes.oneLight,

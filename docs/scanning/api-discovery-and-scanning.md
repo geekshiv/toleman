@@ -18,7 +18,7 @@ Once routes are discovered, you can actively probe them with **nuclei**:
 POST /api/api-scan/{target_id}
 ```
 
-This only works against endpoints Rikugan already discovered for a target **whose owner already configured a host** — `Target.api_base_url` (set via `PATCH /api/targets/{id}`) is the *only* source of a scan host. Any discovered route that would resolve outside that host's netloc is dropped, not scanned — a caller can never point an active scan at an arbitrary third-party URL.
+This only works against endpoints Toleman already discovered for a target **whose owner already configured a host** — `Target.api_base_url` (set via `PATCH /api/targets/{id}`) is the *only* source of a scan host. Any discovered route that would resolve outside that host's netloc is dropped, not scanned — a caller can never point an active scan at an arbitrary third-party URL.
 
 Safety defaults:
 - Excludes `dos`, `fuzz`, `intrusive` nuclei template tags by default — a first run is passive/safe

@@ -15,8 +15,8 @@ Create a personal access token at **Settings → Workspace → API Tokens**. The
 Send it as a Bearer token:
 
 ```bash
-curl -H "Authorization: Bearer rikugan_pat_..." \
-  https://your-rikugan-instance/api/public/v1/targets
+curl -H "Authorization: Bearer toleman_pat_..." \
+  https://your-toleman-instance/api/public/v1/targets
 ```
 
 ## Scope

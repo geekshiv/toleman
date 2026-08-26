@@ -33,7 +33,7 @@ Secret fields (GitHub App secrets, the OpenAI-compatible provider key, Slack web
 
 ```json
 {
-  "source": "rikugan",
+  "source": "toleman",
   "event_type": "finding",
   "finding_id": 123,
   "dedup_hash": "...",

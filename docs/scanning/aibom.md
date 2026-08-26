@@ -6,7 +6,7 @@ sidebar_position: 5
 
 An ordinary SBOM inventories **packages**. An AIBOM inventories the parts a package SBOM is blind to: **models, datasets, and their lineage**.
 
-Rikugan emits **CycloneDX 1.6**, which added first-class machine-learning component types. That format was chosen over SPDX 3.0's AI profile for a practical reason: Rikugan already produces CycloneDX for its SBOM, so the AIBOM extends an existing pipeline rather than introducing a second format.
+Toleman emits **CycloneDX 1.6**, which added first-class machine-learning component types. That format was chosen over SPDX 3.0's AI profile for a practical reason: Toleman already produces CycloneDX for its SBOM, so the AIBOM extends an existing pipeline rather than introducing a second format.
 
 ## How it is generated
 
@@ -26,7 +26,7 @@ This is the most important thing to understand about the output.
 
 Model and dataset lineage frequently **cannot** be determined from source. A repository calling `openai.chat.completions.create(model="gpt-5")` has a real model dependency with no accessible training-data provenance and no version to pin.
 
-Rikugan records those facts as an explicit `unknown` rather than omitting them:
+Toleman records those facts as an explicit `unknown` rather than omitting them:
 
 - An absent `modelCard` reads as *"not applicable"*.
 - An explicit `unknown` reads as *"we looked and could not tell"*.

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Enrichment & AI Analysis
 
-Rikugan has two, deliberately separate ways to add context to a finding.
+Toleman has two, deliberately separate ways to add context to a finding.
 
 ## No-AI enrichment (works with zero AI provider configured)
 
