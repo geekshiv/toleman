@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Public API specification
 
-Programmatic access to targets, findings and scans, authenticated with a personal access token. Intended for scripts, CI jobs and third-party integrations — not browser sessions.
+Programmatic access to targets, findings and scans, authenticated with a personal access token. Intended for scripts, CI jobs and third-party integrations; not browser sessions.
 
-**[Download the OpenAPI 3.1 spec](/openapi/toleman-public-v1.json)** — generated from the running application, so it describes what the API actually does rather than what someone remembered it doing. Import it into Postman, Insomnia, or any OpenAPI client generator.
+**[Download the OpenAPI 3.1 spec](/openapi/toleman-public-v1.json)**, generated from the running application, so it describes what the API actually does rather than what someone remembered it doing. Import it into Postman, Insomnia, or any OpenAPI client generator.
 
 ## Authentication
 
@@ -16,7 +16,7 @@ Every endpoint takes a bearer token:
 Authorization: Bearer toleman_pat_...
 ```
 
-Create one in **Settings → Workspace → API tokens**. The plaintext value is shown **once, at creation** — Toleman stores only a SHA-256 hash, so a lost token cannot be recovered and must be revoked and replaced.
+Create one in **Settings → Workspace → API tokens**. The plaintext value is shown **once, at creation**; Toleman stores only a SHA-256 hash, so a lost token cannot be recovered and must be revoked and replaced.
 
 ### Scopes
 
@@ -25,7 +25,7 @@ Create one in **Settings → Workspace → API tokens**. The plaintext value is 
 | `read` | All `GET` endpoints |
 | `read_write` | The above, plus `POST /scans` |
 
-A `read` token calling a write endpoint gets `403`, not `401` — it authenticated fine, it simply is not permitted:
+A `read` token calling a write endpoint gets `403`, not `401`; it authenticated fine, it simply is not permitted:
 
 ```json
 { "detail": "this token is read-only; a read_write token is required" }
@@ -51,7 +51,7 @@ A `read` token calling a write endpoint gets `403`, not `401` — it authenticat
 | `GET` | `/api/public/v1/targets` | List Targets | — |
 | `GET` | `/api/public/v1/targets/{target_id}` | Get Target | — |
 
-Every response is scoped to the workspaces the token's owner can access. A token never grants more than the user who created it — revoking the user's access revokes the token's reach with it.
+Every response is scoped to the workspaces the token's owner can access. A token never grants more than the user who created it, revoking the user's access revokes the token's reach with it.
 
 ## Examples
 

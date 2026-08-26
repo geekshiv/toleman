@@ -24,11 +24,11 @@ Or use the **Targets** page in the UI, which drives the same endpoint. `critical
 
 ![Targets: repository inventory](/img/screenshots/targets-list.png)
 
-Each row leads with the number that matters: open findings on the default branch, with critical (`C`) and high (`H`) counts beside it. A repository that has never been scanned shows **not scanned** rather than a zero — nobody looked, which is not the same as clean.
+Each row leads with the number that matters: open findings on the default branch, with critical (`C`) and high (`H`) counts beside it. A repository that has never been scanned shows **not scanned** rather than a zero; nobody looked, which is not the same as clean.
 
 The list sorts by **most findings** by default, since that is the question the page exists to answer. Other orders are most-severe, least-recently-scanned (never-scanned first) and name. Rows per page is adjustable (25/50/100).
 
-`PATCH /api/targets/{id}` updates a target — including `api_base_url`, which is the *only* source of a host for [Active API Scanning](../scanning/api-discovery-and-scanning.md); a nuclei scan can never be pointed at an arbitrary third-party URL.
+`PATCH /api/targets/{id}` updates a target; including `api_base_url`, which is the *only* source of a host for [Active API Scanning](../scanning/api-discovery-and-scanning.md); a nuclei scan can never be pointed at an arbitrary third-party URL.
 
 ## The target detail page
 
@@ -46,7 +46,7 @@ Link directly to a tab with `?tab=overview`, `?tab=vulnerabilities` or `?tab=set
 
 ## Groups & tags
 
-Targets can be organized into **Groups** — `GET/POST/DELETE /api/targets/{id}/groups/{group_id}`. Groups let you set shared configuration (enforcement mode, SLA rules) that applies to every target in the group instead of per-repo. See [PR Guardrail](./pr-guardrail.md) for how group-level settings resolve.
+Targets can be organized into **Groups**; `GET/POST/DELETE /api/targets/{id}/groups/{group_id}`. Groups let you set shared configuration (enforcement mode, SLA rules) that applies to every target in the group instead of per-repo. See [PR Guardrail](./pr-guardrail.md) for how group-level settings resolve.
 
 ## The "All repos" pattern
 
@@ -54,6 +54,6 @@ Wherever you see a repo dropdown (SBOM, Reports, Dashboard scoping), Toleman use
 
 ## Workspace API key
 
-Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](./pipeline-integration.md) — this is separate from your session login and from the GitHub App token. Manage it from **Settings → Workspace**:
+Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](./pipeline-integration.md); this is separate from your session login and from the GitHub App token. Manage it from **Settings → Workspace**:
 
 ![Settings: masked workspace API key with reveal/copy/rotate](/img/screenshots/settings-workspace.png)
