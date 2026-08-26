@@ -4,16 +4,16 @@ sidebar_position: 3
 
 # CI/CD Pipeline Integration
 
-Rikugan can open a real PR against a target repo that adds a GitHub Actions workflow running Semgrep/Gitleaks/Trivy (+ gosec, if Go is detected) natively and pushing results back to Rikugan.
+Toleman can open a real PR against a target repo that adds a GitHub Actions workflow running Semgrep/Gitleaks/Trivy (+ gosec, if Go is detected) natively and pushing results back to Toleman.
 
 ## Per-target integration
 
 `GET /api/targets/{id}/pipeline-workflow` generates the workflow YAML for preview. `POST /api/targets/{id}/pipeline-integrate` opens a real PR adding it, via the GitHub App installation token — same token-minting path PR Guardrail uses to set commit statuses.
 
-The generated workflow requires two repo secrets, pointing at a **publicly reachable** Rikugan deployment (a `localhost` backend can't be reached by GitHub's cloud runners):
+The generated workflow requires two repo secrets, pointing at a **publicly reachable** Toleman deployment (a `localhost` backend can't be reached by GitHub's cloud runners):
 
-- `RIKUGAN_API_URL`
-- `RIKUGAN_API_KEY` — the target's workspace API key
+- `TOLEMAN_API_URL`
+- `TOLEMAN_API_KEY` — the target's workspace API key
 
 Results are pushed via `POST /api/ingest/{target_id}` (SARIF), authenticated by that key rather than a session cookie.
 

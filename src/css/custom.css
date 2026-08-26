@@ -1,5 +1,5 @@
 /**
- * Rikugan docs theme -- mirrors frontend/src/app/globals.css's dark-theme
+ * Toleman docs theme -- mirrors frontend/src/app/globals.css's dark-theme
  * design tokens (cyan-on-near-black) so the docs site reads as the same
  * product, not a generic Docusaurus instance. Infima (Docusaurus's CSS
  * framework) uses --ifm-* variables instead of the app's --primary/--card

@@ -21,7 +21,7 @@ Creates an Org + Workspace + API key for CI push auth in one call — used for f
 Each workspace has an API key used to authenticate:
 
 - CI/CD SARIF pushes to `/api/ingest/{target_id}`
-- Generated pipeline-integration workflows (`RIKUGAN_API_KEY` secret)
+- Generated pipeline-integration workflows (`TOLEMAN_API_KEY` secret)
 
 Manage/rotate a target's key: `GET /api/targets/{id}/workspace-key`, `POST .../workspace-key/regenerate`. Keys are never echoed back in plaintext after creation except at generation time — the UI shows a masked value with a rotate action, not the raw key on every load, at **Settings → Workspace**:
 

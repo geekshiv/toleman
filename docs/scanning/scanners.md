@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Scanners
 
-Rikugan runs scanners **natively** as subprocesses (not by re-parsing another tool's cloud output) via `backend/app/scanners/runner.py`.
+Toleman runs scanners **natively** as subprocesses (not by re-parsing another tool's cloud output) via `backend/app/scanners/runner.py`.
 
 | Scanner | Type | Covers |
 |---|---|---|
@@ -15,7 +15,7 @@ Rikugan runs scanners **natively** as subprocesses (not by re-parsing another to
 | **nuclei** | DAST | Active scanning of already-discovered API endpoints |
 | **Checkov / tfsec** | IaC | Terraform, Kubernetes, CloudFormation misconfiguration |
 | **ModelScan** | AI/ML | Unsafe deserialization in serialized model files |
-| **semgrep-llm** | AI/ML | Rikugan's OWASP LLM Top 10 ruleset, shipped in-repo |
+| **semgrep-llm** | AI/ML | Toleman's OWASP LLM Top 10 ruleset, shipped in-repo |
 
 The two AI/ML scanners only run against repositories detected as AI/ML — see [AI/ML repository security](./ai-security.md).
 

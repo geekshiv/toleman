@@ -4,15 +4,15 @@ sidebar_position: 1
 
 # Quickstart
 
-Rikugan is 100% free and open-source — no paid tiers, no feature gating. This page gets you from `git clone` to a running instance.
+Toleman is 100% free and open-source — no paid tiers, no feature gating. This page gets you from `git clone` to a running instance.
 
 ## Option A: Docker Compose (recommended)
 
 Requires only [Docker](https://docs.docker.com/get-docker/) with Compose v2.
 
 ```bash
-git clone https://github.com/geekshiv/rikugan-platform.git
-cd rikugan
+git clone https://github.com/toleman-platform/toleman-platform.git
+cd toleman-platform
 cp .env.example .env   # every var has a working local-dev default
 docker compose up --build
 ```
@@ -32,7 +32,7 @@ Once it's up:
 | Backend API | http://localhost:8000 (`/docs` for OpenAPI UI, `/health` for liveness) |
 | Scanner sanity check | `curl http://localhost:8000/api/tools/health` |
 
-Sign in with the seeded admin account: `ADMIN_EMAIL`/`ADMIN_PASSWORD` from `.env` (defaults to `admin@rikugan.local` / `changeme123` — **change this before any non-local use**).
+Sign in with the seeded admin account: `ADMIN_EMAIL`/`ADMIN_PASSWORD` from `.env` (defaults to `admin@toleman.local` / `changeme123` — **change this before any non-local use**).
 
 To stop: `docker compose down` (add `-v` to also drop the Postgres volume).
 
@@ -72,8 +72,8 @@ The scanner CLIs are Linux/macOS-first tools with inconsistent native Windows su
 Create the database:
 
 ```bash
-psql postgres -c "CREATE USER rikugan WITH PASSWORD 'rikugan' CREATEDB;"
-psql postgres -c "CREATE DATABASE rikugan OWNER rikugan;"
+psql postgres -c "CREATE USER toleman WITH PASSWORD 'toleman' CREATEDB;"
+psql postgres -c "CREATE DATABASE toleman OWNER toleman;"
 ```
 
 ### Backend
@@ -108,11 +108,11 @@ Open http://localhost:3000 — redirects to `/login`.
 
 ## First-run setup
 
-The first time an admin signs in to a new deployment, Rikugan asks a few questions about your stack — languages, whether you manage infrastructure as code, whether you build AI/ML features, your pull-request policy.
+The first time an admin signs in to a new deployment, Toleman asks a few questions about your stack — languages, whether you manage infrastructure as code, whether you build AI/ML features, your pull-request policy.
 
 ![First-run setup questionnaire](/img/screenshots/onboarding-questionnaire.png)
 
-Rikugan ships with **every scanner enabled**. The answers let it switch off the ones that cannot apply to you, so your findings are signal rather than noise — gosec has nothing to say about a repository with no Go.
+Toleman ships with **every scanner enabled**. The answers let it switch off the ones that cannot apply to you, so your findings are signal rather than noise — gosec has nothing to say about a repository with no Go.
 
 Two things worth knowing:
 

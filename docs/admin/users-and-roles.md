@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Users & Roles
 
-Rikugan uses a two-layer role system.
+Toleman uses a two-layer role system.
 
 ## Global role
 
@@ -26,4 +26,4 @@ Assign roles: **Admin → Access → Workspace Roles**, or `/api/admin/workspace
 
 Login is pbkdf2-hashed password + HMAC-signed session cookie — no external auth service (`app/core/security.py`). Route protection on the frontend lives in `src/proxy.ts`.
 
-The seeded admin account (`ADMIN_EMAIL`/`ADMIN_PASSWORD` in backend `.env`, default `admin@rikugan.local` / `changeme123`) is created on first backend startup — **change the password before any non-local use.**
+The seeded admin account (`ADMIN_EMAIL`/`ADMIN_PASSWORD` in backend `.env`, default `admin@toleman.local` / `changeme123`) is created on first backend startup — **change the password before any non-local use.**

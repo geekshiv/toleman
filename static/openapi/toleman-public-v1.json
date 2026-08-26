@@ -1,14 +1,14 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Rikugan Public API",
+    "title": "Toleman Public API",
     "version": "v1",
     "description": "Read/write access to targets, findings and scans, authenticated with a personal access token. Generated from the running application, not hand-written."
   },
   "servers": [
     {
-      "url": "https://your-rikugan-host",
-      "description": "Your Rikugan deployment"
+      "url": "https://your-toleman-host",
+      "description": "Your Toleman deployment"
     }
   ],
   "paths": {
@@ -335,7 +335,7 @@
     "securitySchemes": {
       "ApiToken": {
         "type": "http",
-        "description": "Personal access token from Settings -> Workspace. Send as `Authorization: Bearer rikugan_pat_...`.",
+        "description": "Personal access token from Settings -> Workspace. Send as `Authorization: Bearer toleman_pat_...`.",
         "scheme": "bearer"
       }
     },

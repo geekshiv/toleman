@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # MCP Server
 
-Connect an MCP-compatible client (Claude Code, Claude Desktop, etc.) directly to your Rikugan instance — list targets, browse findings, check scan status, and trigger scans from within a conversation.
+Connect an MCP-compatible client (Claude Code, Claude Desktop, etc.) directly to your Toleman instance — list targets, browse findings, check scan status, and trigger scans from within a conversation.
 
-Lives in [`mcp-server/`](https://github.com/geekshiv/rikugan-platform/tree/main/mcp-server) in the main repo, as a **standalone process** with its own Python environment — not embedded in the backend. The official `mcp` package requires a newer Starlette/Pydantic than this project's pinned FastAPI/SQLModel versions tolerate, so it runs separately rather than forcing a risky upgrade of the core web stack. It's a thin client over the [Public API](./api.md) — same auth, same tools' worth of surface, just callable from an MCP conversation instead of `curl`.
+Lives in [`mcp-server/`](https://github.com/toleman-platform/toleman-platform/tree/main/mcp-server) in the main repo, as a **standalone process** with its own Python environment — not embedded in the backend. The official `mcp` package requires a newer Starlette/Pydantic than this project's pinned FastAPI/SQLModel versions tolerate, so it runs separately rather than forcing a risky upgrade of the core web stack. It's a thin client over the [Public API](./api.md) — same auth, same tools' worth of surface, just callable from an MCP conversation instead of `curl`.
 
 ## Setup
 
@@ -33,12 +33,12 @@ Create a personal access token: **Settings → Workspace → API Tokens** (see [
 ```json
 {
   "mcpServers": {
-    "rikugan": {
-      "command": "/absolute/path/to/rikugan-platform/mcp-server/venv/bin/python",
-      "args": ["/absolute/path/to/rikugan-platform/mcp-server/server.py"],
+    "toleman": {
+      "command": "/absolute/path/to/toleman-platform/mcp-server/venv/bin/python",
+      "args": ["/absolute/path/to/toleman-platform/mcp-server/server.py"],
       "env": {
-        "RIKUGAN_API_URL": "http://localhost:8000",
-        "RIKUGAN_API_TOKEN": "rikugan_pat_..."
+        "TOLEMAN_API_URL": "http://localhost:8000",
+        "TOLEMAN_API_TOKEN": "toleman_pat_..."
       }
     }
   }

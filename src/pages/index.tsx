@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--outline button--lg"
             style={{color: '#e2e8f0', borderColor: '#e2e8f0'}}
-            to="https://github.com/geekshiv/rikugan-platform">
+            to="https://github.com/toleman-platform/toleman-platform">
             View on GitHub
           </Link>
         </div>
@@ -51,7 +51,7 @@ const PROBLEMS = [
 const SOLUTIONS = [
   {
     title: 'One platform, native scanners',
-    body: 'Semgrep, Trivy, Gitleaks, gosec, and nuclei run natively — Rikugan manages tool installs and dispatches real scans, it doesn’t just parse someone else’s report.',
+    body: 'Semgrep, Trivy, Gitleaks, gosec, and nuclei run natively — Toleman manages tool installs and dispatches real scans, it doesn’t just parse someone else’s report.',
   },
   {
     title: 'Real deduplication',
@@ -133,7 +133,7 @@ export default function Home(): ReactNode {
         <Section eyebrow="The problem" title="Security tooling is fragmented, gated, and noisy">
           <CardGrid items={PROBLEMS} />
         </Section>
-        <Section eyebrow="How Rikugan solves it" title="One free platform that actually runs the scanners">
+        <Section eyebrow="How Toleman solves it" title="One free platform that actually runs the scanners">
           <CardGrid items={SOLUTIONS} />
         </Section>
         <section style={{padding: '2rem 0 5rem', textAlign: 'center'}}>
@@ -141,7 +141,7 @@ export default function Home(): ReactNode {
             <Heading as="h2">Ready to try it?</Heading>
             <p style={{color: 'var(--ifm-color-content-secondary)', marginBottom: '1.5rem'}}>
               Clone it, run one command, and scan your first repo in minutes. No waitlist, no gated
-              access — Rikugan is self-hosted and free from day one.
+              access — Toleman is self-hosted and free from day one.
             </p>
             <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
               <Link className="button button--primary button--lg" to="/documentation/getting-started/quickstart">
@@ -149,7 +149,7 @@ export default function Home(): ReactNode {
               </Link>
               <Link
                 className="button button--outline button--lg"
-                to="https://github.com/geekshiv/rikugan/discussions/1">
+                to="https://github.com/geekshiv/toleman/discussions/1">
                 Get notified about releases
               </Link>
             </div>

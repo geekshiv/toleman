@@ -6,17 +6,17 @@ sidebar_position: 2
 
 Programmatic access to targets, findings and scans, authenticated with a personal access token. Intended for scripts, CI jobs and third-party integrations — not browser sessions.
 
-**[Download the OpenAPI 3.1 spec](/openapi/rikugan-public-v1.json)** — generated from the running application, so it describes what the API actually does rather than what someone remembered it doing. Import it into Postman, Insomnia, or any OpenAPI client generator.
+**[Download the OpenAPI 3.1 spec](/openapi/toleman-public-v1.json)** — generated from the running application, so it describes what the API actually does rather than what someone remembered it doing. Import it into Postman, Insomnia, or any OpenAPI client generator.
 
 ## Authentication
 
 Every endpoint takes a bearer token:
 
 ```
-Authorization: Bearer rikugan_pat_...
+Authorization: Bearer toleman_pat_...
 ```
 
-Create one in **Settings → Workspace → API tokens**. The plaintext value is shown **once, at creation** — Rikugan stores only a SHA-256 hash, so a lost token cannot be recovered and must be revoked and replaced.
+Create one in **Settings → Workspace → API tokens**. The plaintext value is shown **once, at creation** — Toleman stores only a SHA-256 hash, so a lost token cannot be recovered and must be revoked and replaced.
 
 ### Scopes
 
@@ -58,32 +58,32 @@ Every response is scoped to the workspaces the token's owner can access. A token
 List open critical findings:
 
 ```bash
-curl -H "Authorization: Bearer $RIKUGAN_TOKEN" \
-  "https://your-rikugan-host/api/public/v1/findings?severity=Critical&state=Open"
+curl -H "Authorization: Bearer $TOLEMAN_TOKEN" \
+  "https://your-toleman-host/api/public/v1/findings?severity=Critical&state=Open"
 ```
 
 Trigger a scan (requires `read_write`). Note the parameters are **query string**, not a JSON body:
 
 ```bash
-curl -X POST -H "Authorization: Bearer $RIKUGAN_TOKEN" \
-  "https://your-rikugan-host/api/public/v1/scans?target_id=1&tool=semgrep"
+curl -X POST -H "Authorization: Bearer $TOLEMAN_TOKEN" \
+  "https://your-toleman-host/api/public/v1/scans?target_id=1&tool=semgrep"
 ```
 
 Scans are dispatched asynchronously. The response carries a scan id; poll it rather than holding the request open:
 
 ```bash
-curl -H "Authorization: Bearer $RIKUGAN_TOKEN" \
-  "https://your-rikugan-host/api/public/v1/scans/123"
+curl -H "Authorization: Bearer $TOLEMAN_TOKEN" \
+  "https://your-toleman-host/api/public/v1/scans/123"
 ```
 
 ## Interactive reference
 
-A running Rikugan deployment serves live, interactive API docs at **`/docs`** (Swagger UI) and **`/redoc`**, covering the full internal API as well as these public endpoints. The public endpoints declare their security scheme, so Swagger UI's **Authorize** button works with a personal access token.
+A running Toleman deployment serves live, interactive API docs at **`/docs`** (Swagger UI) and **`/redoc`**, covering the full internal API as well as these public endpoints. The public endpoints declare their security scheme, so Swagger UI's **Authorize** button works with a personal access token.
 
 ## Versioning
 
 The path carries the version (`/api/public/v1`). Breaking changes will land under a new prefix rather than mutating `v1` beneath existing callers.
 
 :::note Internal API
-Everything outside `/api/public/v1` is the application's own interface, used by the Rikugan UI via session cookies. It is not versioned and changes without notice. Build integrations against the public API.
+Everything outside `/api/public/v1` is the application's own interface, used by the Toleman UI via session cookies. It is not versioned and changes without notice. Build integrations against the public API.
 :::

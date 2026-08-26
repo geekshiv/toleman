@@ -76,4 +76,4 @@ KEV floor → 900
 
 ## Working through a long list
 
-Every list surface in Rikugan is paginated, with a control at the top of the list as well as the bottom so the size of the result set is visible before you scroll. Rows per page is adjustable — **25, 50 or 100** — and the choice is carried in the URL, so a link to a filtered, sorted, paged view reproduces exactly what you were looking at.
+Every list surface in Toleman is paginated, with a control at the top of the list as well as the bottom so the size of the result set is visible before you scroll. Rows per page is adjustable — **25, 50 or 100** — and the choice is carried in the URL, so a link to a filtered, sorted, paged view reproduces exactly what you were looking at.

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Targets & Repo Groups
 
-A **Target** is a repo Rikugan scans. Targets belong to a Workspace.
+A **Target** is a repo Toleman scans. Targets belong to a Workspace.
 
 ## Adding a target
 
@@ -50,7 +50,7 @@ Targets can be organized into **Groups** — `GET/POST/DELETE /api/targets/{id}/
 
 ## The "All repos" pattern
 
-Wherever you see a repo dropdown (SBOM, Reports, Dashboard scoping), Rikugan uses one consistent pattern: a single dropdown with an "All repositories" entry at the top, not a separate tab or toggle. This is the `TargetPicker` component's `allowAll` prop, reused across every page that needs org-wide vs. per-repo scoping.
+Wherever you see a repo dropdown (SBOM, Reports, Dashboard scoping), Toleman uses one consistent pattern: a single dropdown with an "All repositories" entry at the top, not a separate tab or toggle. This is the `TargetPicker` component's `allowAll` prop, reused across every page that needs org-wide vs. per-repo scoping.
 
 ## Workspace API key
 
