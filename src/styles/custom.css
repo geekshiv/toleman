@@ -1,0 +1,62 @@
+/**
+ * Toleman brand tokens ported from the app's own light-theme design
+ * system (--primary #22c1d9, --background #f5f7fa) into Starlight's
+ * --sl-* custom properties, so the docs site reads as the same product
+ * instead of Starlight's default purple.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+	--sl-font: 'Plus Jakarta Sans', system-ui, sans-serif;
+	--sl-font-code: 'SFMono-Regular', Consolas, Menlo, monospace;
+
+	--sl-color-accent-low: #e6f6f9;
+	--sl-color-accent: #0a7490;
+	--sl-color-accent-high: #22c1d9;
+
+	--sl-color-white: #161c2b;
+	--sl-color-gray-1: #262c3b;
+	--sl-color-gray-2: #3a4050;
+	--sl-color-gray-3: #5b6472;
+	--sl-color-gray-4: #8890a0;
+	--sl-color-gray-5: #c5cbd6;
+	--sl-color-gray-6: #e5e9f0;
+	--sl-color-gray-7: #f0f2f6;
+	--sl-color-black: #ffffff;
+
+	--sl-color-bg: #f5f7fa;
+	--sl-color-bg-nav: #ffffff;
+	--sl-color-bg-sidebar: #ffffff;
+	--sl-color-bg-inline-code: #eef1f6;
+	--sl-color-hairline: #dde2ea;
+	--sl-color-hairline-light: #dde2ea;
+	--sl-color-hairline-shade: #dde2ea;
+}
+
+:root[data-theme='dark'] {
+	--sl-color-accent-low: #0e2e33;
+	--sl-color-accent: #22c1d9;
+	--sl-color-accent-high: #74dbec;
+
+	--sl-color-white: #e9eaec;
+	--sl-color-gray-1: #e9eaec;
+	--sl-color-gray-2: #c7cad0;
+	--sl-color-gray-3: #9aa0a8;
+	--sl-color-gray-4: #6b7178;
+	--sl-color-gray-5: #3a3d42;
+	--sl-color-gray-6: #2b2e33;
+	--sl-color-gray-7: #1d2023;
+	--sl-color-black: #16181b;
+
+	--sl-color-bg: #16181b;
+	--sl-color-bg-nav: #1d2023;
+	--sl-color-bg-sidebar: #1d2023;
+	--sl-color-bg-inline-code: #24272b;
+	--sl-color-hairline: #2b2e33;
+	--sl-color-hairline-light: #2b2e33;
+	--sl-color-hairline-shade: #2b2e33;
+}
+
+:root {
+	--sl-shadow-sm: none;
+}

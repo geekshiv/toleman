@@ -1,0 +1,61 @@
+---
+title: "Targets & Repo Groups"
+description: "A Target is a repo Toleman scans."
+---
+
+A **Target** is a repo Toleman scans. Targets belong to a Workspace.
+
+## Adding a target
+
+```bash
+POST /api/targets
+{
+  "workspace_id": 1,
+  "name": "myrepo",
+  "repo_url": "https://github.com/org/repo.git",
+  "default_branch": "main",
+  "label": "Dev",
+  "criticality_weight": 2
+}
+```
+
+Or use the **Targets** page in the UI, which drives the same endpoint. `criticality_weight` feeds priority scoring (see [Findings Lifecycle & Scoring](/toleman/findings/lifecycle-and-scoring/)) and is shown per row as *Risk N/5*.
+
+![Targets: repository inventory](/toleman/img/screenshots/targets-list.svg)
+
+Each row leads with the number that matters: open findings on the default branch, with critical (`C`) and high (`H`) counts beside it. A repository that has never been scanned shows **not scanned** rather than a zero; nobody looked, which is not the same as clean.
+
+The list sorts by **most findings** by default, since that is the question the page exists to answer. Other orders are most-severe, least-recently-scanned (never-scanned first) and name. Rows per page is adjustable (25/50/100).
+
+`PATCH /api/targets/{id}` updates a target; including `api_base_url`, which is the *only* source of a host for [Active API Scanning](/toleman/scanning/api-discovery-and-scanning/); a nuclei scan can never be pointed at an arbitrary third-party URL.
+
+## The target detail page
+
+A target has six sub-pages, each with its own URL so it can be linked from a finding, a PR comment or a Slack alert:
+
+| Tab | Contents |
+|---|---|
+| **Overview** | Open findings by severity, last scan and which tools ran, default branch, risk weight, AI/ML detection status |
+| **Fix plan** | Suggested remediation order across this target's open findings |
+| **Vulnerabilities** | This target's findings, with the same triage, filtering and bulk actions as the main Findings page |
+| **Dependencies** | This target's SBOM component inventory |
+| **History** | Past scan runs for this target |
+| **Settings** | Groups, PR Guardrail enforcement, Active API Scanning, CI pipeline integration |
+
+![Target detail page](/toleman/img/screenshots/target-detail.svg)
+
+Link directly to a tab with `?tab=overview`, `?tab=vulnerabilities` or `?tab=settings` (also `fix-plan`, `dependencies`, `history`).
+
+## Groups & tags
+
+Targets can be organized into **Groups**; `GET/POST/DELETE /api/targets/{id}/groups/{group_id}`. Groups let you set shared configuration (enforcement mode, SLA rules) that applies to every target in the group instead of per-repo. See [PR Guardrail](/toleman/github-integration/pr-guardrail/) for how group-level settings resolve.
+
+## The "All repos" pattern
+
+Wherever you see a repo dropdown (SBOM, Reports, Dashboard scoping), Toleman uses one consistent pattern: a single dropdown with an "All repositories" entry at the top, not a separate tab or toggle. This is the `TargetPicker` component's `allowAll` prop, reused across every page that needs org-wide vs. per-repo scoping.
+
+## Workspace API key
+
+Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](/toleman/github-integration/pipeline-integration/); this is separate from your session login and from the GitHub App token. Manage it from **Administration → Workspaces**, alongside the workspace's name and per-workspace roles:
+
+![Workspaces admin: masked API key with reveal/copy/rotate](/toleman/img/screenshots/admin-workspace-roles.svg)

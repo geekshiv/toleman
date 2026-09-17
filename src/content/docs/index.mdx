@@ -1,0 +1,76 @@
+---
+title: Toleman
+description: The free, open-source DevSecOps vulnerability management platform
+template: splash
+hero:
+  title: Toleman
+  tagline: The free, open-source DevSecOps vulnerability management platform
+  actions:
+    - text: Get Started
+      link: /toleman/getting-started/quickstart/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/toleman-platform/toleman-platform
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## The problem
+
+Security tooling is fragmented, gated, and noisy.
+
+<CardGrid>
+	<Card title="Fragmented tooling">
+		SAST, container/SCA, secrets, and Go-specific scanners each live in their own silo, with no shared UI, dedup, or prioritization across them.
+	</Card>
+	<Card title="Enterprise features behind a paywall">
+		SSO, RBAC, and PR-level enforcement are routinely gated behind paid tiers in existing vulnerability management platforms, even for small teams.
+	</Card>
+	<Card title="Finding fatigue">
+		The same underlying issue re-appears as a "new" finding after every refactor, and nothing tells you which of a thousand findings actually matters this week.
+	</Card>
+	<Card title="Aggregation without action">
+		Most platforms only aggregate other tools' output. They don't run scanners themselves, manage tool installs, or actually block a risky PR.
+	</Card>
+</CardGrid>
+
+## How Toleman solves it
+
+One free platform that actually runs the scanners.
+
+<CardGrid>
+	<Card title="One platform, native scanners">
+		Semgrep, Trivy, Gitleaks, gosec, and nuclei run natively; Toleman manages tool installs and dispatches real scans, it doesn't just parse someone else's report.
+	</Card>
+	<Card title="Real deduplication">
+		A dedup fingerprint keyed on rule + file + tool + normalized snippet survives line-shift refactors, so the same issue stays one finding.
+	</Card>
+	<Card title="Context-aware prioritization">
+		Severity × target criticality, boosted by live EPSS exploit-prediction and CISA KEV known-exploited data, all configurable per workspace.
+	</Card>
+	<Card title="PR Guardrail, for real">
+		Diff-scans a pull request for net-new findings and enforces block/alert/disabled per target, group, or workspace, with an accept-risk approval workflow.
+	</Card>
+	<Card title="100% free, always">
+		SSO, RBAC, SLA rules, policy-as-code, Slack/Jira integration; every feature ships free. No paid tier, no feature gating, ever.
+	</Card>
+	<Card title="Enterprise-grade polish">
+		A modern, developer-first UI with dark/light themes; built to feel like a premium product, not a weekend side project.
+	</Card>
+</CardGrid>
+
+## Ready to try it?
+
+Clone it, run one command, and scan your first repo in minutes. No waitlist, no gated access; Toleman is self-hosted and free from day one.
+
+<CardGrid>
+	<Card title="Read the Quickstart">
+		[Get from `git clone` to a running instance →](/toleman/getting-started/quickstart/)
+	</Card>
+	<Card title="Get notified about releases">
+		[Watch the discussions thread →](https://github.com/geekshiv/toleman/discussions/1)
+	</Card>
+</CardGrid>
