@@ -14,14 +14,17 @@
   --ifm-color-primary-light: #3ecbe1;
   --ifm-color-primary-lighter: #4dd0e4;
   --ifm-color-primary-lightest: #74dbec;
-  --ifm-background-color: #f5f7fa;
-  --ifm-background-surface-color: #ffffff;
-  --ifm-font-color-base: #161c2b;
-  --ifm-toc-border-color: #dde2ea;
   --ifm-code-font-size: 90%;
   --ifm-font-family-base: 'Plus Jakarta Sans', system-ui, sans-serif;
   --ifm-heading-font-weight: 700;
   --docusaurus-highlighted-code-line-bg: rgba(34, 193, 217, 0.12);
+}
+
+[data-theme='light'] {
+  --ifm-background-color: #f5f7fa;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-font-color-base: #161c2b;
+  --ifm-toc-border-color: #dde2ea;
 }
 
 [data-theme='dark'] {
@@ -32,17 +35,17 @@
   --ifm-color-primary-light: #3ecbe1;
   --ifm-color-primary-lighter: #4dd0e4;
   --ifm-color-primary-lightest: #74dbec;
-  --ifm-background-color: #0a0e17;
-  --ifm-background-surface-color: #111827;
-  --ifm-navbar-background-color: #0f172a;
-  --ifm-footer-background-color: #0a0e17;
-  --ifm-toc-border-color: #1e293b;
-  --ifm-color-content-secondary: #94a3b8;
+  --ifm-background-color: #16181b;
+  --ifm-background-surface-color: #1d2023;
+  --ifm-navbar-background-color: #1d2023;
+  --ifm-footer-background-color: #16181b;
+  --ifm-toc-border-color: #2b2e33;
+  --ifm-color-content-secondary: #9aa0a8;
   --docusaurus-highlighted-code-line-bg: rgba(34, 193, 217, 0.16);
 }
 
 [data-theme='dark'] .navbar {
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid #2b2e33;
 }
 
 [data-theme='dark'] .menu__link--active,
@@ -51,21 +54,22 @@
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #0a0e17;
+  --ifm-footer-background-color: #16181b;
 }
 
 /* Homepage hero, Infima's auto-generated hero--primary contrast text
    doesn't know about our hand-picked cyan, so it renders as a light teal
-   band with dark text. Override directly to match the app's near-black +
-   cyan-accent look instead of the default light Infima hero card. */
+   band with dark text. Override directly to match the app's neutral-gray
+   + cyan-accent dark theme instead of the default light Infima hero card
+   (the app's dark surfaces are gray, not navy/slate-blue). */
 [data-theme='dark'] .hero--primary {
-  background-color: #0f172a;
-  color: #e2e8f0;
-  border-bottom: 1px solid #1e293b;
+  background-color: #1d2023;
+  color: #e9eaec;
+  border-bottom: 1px solid #2b2e33;
 }
 [data-theme='dark'] .hero--primary .hero__title {
   color: #ffffff;
 }
 [data-theme='dark'] .hero--primary .hero__subtitle {
-  color: #94a3b8;
+  color: #9aa0a8;
 }
