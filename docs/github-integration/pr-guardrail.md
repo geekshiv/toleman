@@ -31,7 +31,7 @@ This is a distinct concept from **Policy** (below): policy decides *which* findi
 
 ## Accept risk / ignore workflow
 
-A developer can request an ignore on a specific finding (`POST /api/pr-guardrail/findings/{id}/request-ignore`). A reviewer with the right role approves (`.../approve-ignore`) or rejects (`.../reject-ignore`) it. Pending requests across the workspace: `GET /api/pr-guardrail/ignore-requests/pending`.
+A developer can request an ignore on a specific finding (`POST /api/pr-guardrail/findings/{id}/request-ignore`), from a PR comment or the PR's scan detail. Every pending request across the workspace lands in one place for review, the **Approval Queue** page (`GET /api/pr-guardrail/ignore-requests/pending`). A reviewer with the right role approves (`POST .../approve-ignore`) or rejects (`.../reject-ignore`) each request from there; a **History** tab on the same page lists past decisions. This is deliberately a two-person action, the developer who wants a finding ignored can't also be the one who approves it.
 
 An admin/security engineer can also override a whole PR's status directly: `POST /api/pr-guardrail/{pr_scan_id}/override`.
 

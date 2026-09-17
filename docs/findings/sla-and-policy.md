@@ -33,6 +33,6 @@ Manage rules: **Guardrails → SLA Rules**, or `/api/sla-rules` (SECURITY_ENGINE
 SLA Rules and Policies share the **Guardrails** page with three more tabs, each scoped to the current workspace:
 
 - **Repo Groups** — the groups referenced above; tag targets (`"production"`, `"pci-scope"`) to apply shared SLA/enforcement config to all of them at once, and set the workspace-level PR Guardrail fallback (Block / Alert / Disabled) for any target or group with nothing configured
-- **Workflow Templates** — reusable finding-response templates
-- **False Positive Rules** — standing suppression rules, distinct from a one-off triage decision on a single finding
-- **Risk Scoring** — the weights behind each target's priority score
+- **Workflow Templates** — named, ordered scanner-step lists for CI/CD pipeline rollout (pick which of Toleman's scanners run, and in what order, instead of the default full set); used by **Mass Rollout** on the Targets page
+- **False Positive Rules** — learned automatically when a finding is marked False Positive; matches (same rule + tool, same filename) are auto-suppressed on future scans anywhere in the workspace, including a different repo. Widen a rule to match any file, or expire/delete it to stop it firing
+- **Risk Scoring** — the weights behind each finding's priority score; see [Priority scoring](./lifecycle-and-scoring.md#priority-scoring)

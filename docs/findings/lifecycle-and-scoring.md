@@ -18,7 +18,9 @@ Bulk triage is available on the Findings page via checkbox selection + a bulk-ac
 
 ## Priority scoring
 
-The full model, so you can predict and audit any score rather than take it on trust. It lives in `backend/app/core/scoring.py` and is about twenty lines; there is no machine learning here and nothing hidden.
+The full model, so you can predict and audit any score rather than take it on trust. It lives in `backend/app/core/scoring.py`; every signal is a **weight**, configurable per workspace at **Guardrails → Risk Scoring**, so a scan re-scores a finding the same way each time and a target that's stopped being scanned or a finding already triaged away keeps the score it last had.
+
+A fresh workspace scores exactly as described below, this is the shipped baseline, weight `1` (or `1×`) on. Turning a weight to `0` switches that signal off entirely; nothing here can *subtract* from a score, a signal the platform can't establish leaves a finding where it was rather than pushing it down the list.
 
 ### The base
 
@@ -34,7 +36,7 @@ score = severity_weight × criticality_weight × 40      (capped at 1000)
 | Low | 2 |
 | Informational | 1 |
 
-`criticality_weight` is 1–5, set per target when you add or edit it. It is clamped to that range before use, so a value outside it cannot distort the scale.
+`criticality_weight` is a target's own **Business criticality** signal, 1–5, set per target when you add or edit it, clamped to that range before use. Both **Tool severity** and **Business criticality** ship as `1×` multipliers on the base formula above.
 
 A Critical on a criticality-5 target therefore scores `5 × 5 × 40 = 1000`; an Informational on a criticality-1 target scores `40`.
 
@@ -42,12 +44,22 @@ A Critical on a criticality-5 target therefore scores `5 × 5 × 40 = 1000`; an 
 
 Applied after the base, and **only one of them applies**; KEV takes precedence:
 
-- **On CISA's KEV list** (known exploited in the wild) → the score is raised to **at least 900**. A floor, not an addition: something being actively exploited is near the top of the list regardless of how the base arithmetic came out.
-- **Otherwise, EPSS > 0.5** → **+160**, capped at 1000. Roughly one severity tier at mid criticality.
+- **CISA KEV** (baseline on): on the KEV catalog (known exploited in the wild) → the score is raised to a **floor of 900**. A floor, not an addition: observed exploitation outranks whatever the base formula said, regardless of how the base arithmetic came out.
+- **EPSS** (baseline on, up to 160 pts): otherwise, FIRST's predicted probability of exploitation in the next 30 days, applied only above 50% → **+160**, capped at 1000. Below that threshold the signal is weak enough that letting it nudge scores would add movement without adding information.
+- **CVSS exploitability** (baseline **off**): Attack Vector, Attack Complexity, Privileges Required and User Interaction, decomposed from the CVE's own CVSS vector. Only CVE-backed findings carry one; a finding with no decodable vector contributes nothing rather than being treated as hard to exploit.
 
-EPSS between 0 and 0.5 contributes nothing. That is deliberate: below that threshold the signal is weak enough that letting it nudge scores would add movement without adding information.
+### The reachability modifiers
 
-### A worked example
+Both baseline **off**, both unlisted-is-never-penalized:
+
+- **Internet exposure**: whether the target is reachable from the public internet, read from its label and environment. A target with nothing recorded is unknown, not "not exposed", and is never penalized for it.
+- **Dependency scope** (#500): whether the vulnerable package ships to production or is only a build-time dependency. A runtime dependency is reachable by anyone who can reach the deployed service; a build-time one needs someone who can already run the build. Only a package positively recorded as runtime gets the uplift.
+
+### Fixability (#246)
+
+Baseline **off**. Whether an upgrade that resolves the finding is already available, raises findings someone can actually close today above ones with no fix to apply.
+
+### A worked example (shipped baseline)
 
 A **High** severity CVE on a **criticality-3** target, EPSS 0.62, not KEV-listed:
 
@@ -62,16 +74,20 @@ The same finding on the same target, once CISA adds it to KEV:
 KEV floor → 900
 ```
 
-### What it deliberately does not consider
+### Why three signals ship off
 
-- **Reachability.** We do not currently know whether your code actually calls the vulnerable function, so the score does not pretend to. This is the largest single source of noise in any SCA tool's ranking, and closing it is tracked as design work rather than quietly approximated.
-- **Finding age.** Handled by SLA rules, which are a separate mechanism with their own configuration; see [SLA & Policy](./sla-and-policy).
-- **Fixability.** Whether an upgrade exists is surfaced as its own field and filter rather than folded into one number, because "worst" and "closable today" are different questions and collapsing them serves neither.
+CVSS exploitability, internet exposure and fixability default to `0`. Switching one on changes how every finding in the workspace ranks, that's a decision for whoever owns triage there to make deliberately, not an upgrade side effect sprung on an existing ranking.
+
+### What it still does not fold into the score
+
+- **Finding age.** Handled by SLA rules, a separate mechanism with its own configuration; see [SLA & Policy](./sla-and-policy).
+- **Fixability**, even when its weight is on, is *also* kept as its own field and filter. "Worst" and "closable today" are different questions; collapsing them into one axis serves neither.
 
 ### Where the inputs come from
 
 - **EPSS**: `core/epss.py`
 - **CISA KEV**: `core/kev.py`, cached 1 hour
+- **CVSS vector, internet exposure, dependency scope**: recorded per-finding/per-target where the platform can establish them; absent when it can't
 - **criticality_weight**: the target's own configured criticality
 
 ## Working through a long list
