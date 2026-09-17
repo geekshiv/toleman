@@ -10,7 +10,7 @@ A versioned, token-authenticated API for scripts, CI, and third-party integratio
 
 Create a personal access token at **Settings → Workspace → API Tokens**. The token is shown once at creation time; copy it immediately, it can't be retrieved again.
 
-![Settings: API Tokens card](/img/screenshots/settings-workspace.png)
+![Settings: API Tokens card](/img/screenshots/settings-workspace.svg)
 
 Send it as a Bearer token:
 

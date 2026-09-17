@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Toleman generates a Software Bill of Materials per target, org-wide, or for a repo group; async, same tracking-row + poll pattern as scans.
 
-![SBOM & OSS Vulns page](/img/screenshots/sbom.png)
+![SBOM & OSS Vulns page](/img/screenshots/sbom.svg)
 
 ```bash
 POST /api/sbom/run?target_id=1

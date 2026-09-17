@@ -12,4 +12,4 @@ GitHub webhook deliveries (push, PR events, installation changes) land on `POST 
 
 Org-wide activity fed by these deliveries is visible in the **GitHub Org Logs** page, real commit activity pulled live from every connected repo, filterable by repo and date range:
 
-![GitHub Org Logs page](/img/screenshots/github-org-logs.png)
+![GitHub Org Logs page](/img/screenshots/github-org-logs.svg)

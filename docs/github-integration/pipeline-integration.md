@@ -19,7 +19,7 @@ Results are pushed via `POST /api/ingest/{target_id}` (SARIF), authenticated by 
 
 A target's detail page shows the integration card and whether it's already integrated:
 
-![Target detail: CI/CD Pipeline Integration card](/img/screenshots/target-detail.png)
+![Target detail: CI/CD Pipeline Integration card](/img/screenshots/target-detail.svg)
 
 ## Bulk integration
 

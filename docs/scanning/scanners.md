@@ -28,17 +28,17 @@ POST /api/scans/run?target_id=1&tool=semgrep
 
 Or from the UI: **On-Demand Scan** page → select target(s) → **Scan**. Scans dispatch async via Celery (`app.tasks.celery_app`, queue `scans`); the request returns immediately with a tracking row; poll status rather than waiting on the request.
 
-![On-Demand Scan page: multi-select target grid](/img/screenshots/scans.png)
+![On-Demand Scan page: multi-select target grid](/img/screenshots/scans.svg)
 
 A target's own detail page has one button per tool instead, for a quick one-off run:
 
-![Target detail: per-tool scan buttons](/img/screenshots/target-detail.png)
+![Target detail: per-tool scan buttons](/img/screenshots/target-detail.svg)
 
 ## Tool health
 
 `GET /api/tools/health` reports real installed versions for every scanner, checked live inside the backend container/process; not a static capability list. Visible at **Administration → Control Plane → Tooling → Tools Health**:
 
-![Control Plane: Tools Health tab, real installed versions](/img/screenshots/admin-tools-health.png)
+![Control Plane: Tools Health tab, real installed versions](/img/screenshots/admin-tools-health.svg)
 
 The neighboring **Tool Marketplace** tab lists every supported tool across SAST, SCA, secrets, container, IaC, license, and AI/ML scanning, each with a copyable install command and per-workspace usage, and a **Recheck all** action that re-runs the health check on demand instead of waiting for it to refresh on its own.
 

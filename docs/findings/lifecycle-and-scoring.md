@@ -10,7 +10,7 @@ A `Finding` moves through a triage state machine, states include (at minimum) **
 
 Bulk triage is available on the Findings page via checkbox selection + a bulk-action bar.
 
-![Findings page: filterable list with risk score, severity, and state](/img/screenshots/findings.png)
+![Findings page: filterable list with risk score, severity, and state](/img/screenshots/findings.svg)
 
 ## Deduplication
 

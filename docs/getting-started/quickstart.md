@@ -104,7 +104,7 @@ npm run dev
 
 Open http://localhost:3000, redirects to `/login`.
 
-![Login screen](/img/screenshots/login.png)
+![Login screen](/img/screenshots/login.svg)
 
 ## First steps after signing in
 
@@ -114,4 +114,4 @@ Open http://localhost:3000, redirects to `/login`.
 
 Once you're in, the dashboard is your home base:
 
-![Security Overview dashboard](/img/screenshots/dashboard.png)
+![Security Overview dashboard](/img/screenshots/dashboard.svg)

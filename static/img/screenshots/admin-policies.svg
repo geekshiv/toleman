@@ -1,0 +1,61 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif">
+<rect x="0" y="0" width="1200" height="900" fill="#f5f7fa"/>
+<rect x="0" y="0" width="240" height="900" fill="#ffffff"/>
+<line x1="240" y1="0" x2="240" y2="900" stroke="#dde2ea"/>
+<rect x="16" y="14" width="24" height="24" rx="6" fill="#22c1d9"/>
+<text x="48" y="28" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="15" font-weight="700" fill="#161c2b" text-anchor="start">Toleman</text>
+<text x="48" y="42" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="8" font-weight="700" fill="#22c1d9" text-anchor="start" letter-spacing="1">SECURITY TERRAIN</text>
+<rect x="16" y="64" width="208" height="30" rx="6" fill="none" stroke="#dde2ea" stroke-width="1"/>
+<text x="28" y="84" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12" font-weight="400" fill="#5b6472" text-anchor="start">Search...</text>
+<rect x="16" y="108" width="208" height="30" rx="6" fill="none" stroke="#dde2ea" stroke-width="1"/>
+<circle cx="28" cy="123" r="4" fill="#22c1d9"/>
+<text x="38" y="128" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#161c2b" text-anchor="start">toleman-platform</text>
+<text x="16" y="154" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">OVERVIEW</text>
+<text x="26" y="174" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Dashboard</text>
+<text x="16" y="206" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">DISCOVER</text>
+<text x="26" y="226" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Targets</text>
+<text x="26" y="252" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">API Discovery</text>
+<text x="16" y="284" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">SCAN</text>
+<text x="26" y="304" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">On-Demand Scan</text>
+<text x="26" y="330" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">SBOM &amp; OSS Vulns</text>
+<text x="26" y="356" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Malicious Packages</text>
+<text x="26" y="382" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">AI Security</text>
+<text x="16" y="414" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">TRIAGE</text>
+<text x="26" y="434" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Findings</text>
+<text x="26" y="460" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">PR History</text>
+<text x="26" y="486" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Approval Queue</text>
+<text x="16" y="518" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">GUARDRAILS</text>
+<rect x="8" y="520" width="224" height="26" rx="6" fill="#e6f6f9" stroke="none" stroke-width="1"/>
+<rect x="8" y="520" width="3" height="26" rx="2" fill="#22c1d9" stroke="none" stroke-width="1"/>
+<text x="26" y="538" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="700" fill="#22c1d9" text-anchor="start">Guardrails</text>
+<g><rect x="170" y="525" width="43.0" height="18" rx="4" fill="#fbedd1" stroke="none" stroke-width="1"/><text x="191.5" y="538" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#8a6200" text-anchor="middle">ADMIN</text></g>
+<text x="16" y="570" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">REPORT</text>
+<text x="26" y="590" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Compliance Reports</text>
+<text x="26" y="616" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Explain with AI</text>
+<text x="16" y="648" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">AUDIT TRAILS</text>
+<text x="26" y="668" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Audit Log</text>
+<text x="26" y="694" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">GitHub Org Logs</text>
+<text x="16" y="726" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="700" fill="#5b6472" text-anchor="start" letter-spacing="0.5">ADMINISTRATION</text>
+<text x="26" y="746" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Overview</text>
+<text x="26" y="772" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Settings</text>
+<text x="26" y="798" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Workspaces</text>
+<g><rect x="170" y="785" width="43.0" height="18" rx="4" fill="#fbedd1" stroke="none" stroke-width="1"/><text x="191.5" y="798" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#8a6200" text-anchor="middle">ADMIN</text></g>
+<text x="26" y="824" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12.5" font-weight="500" fill="#161c2b" text-anchor="start">Control Plane</text>
+<g><rect x="170" y="811" width="43.0" height="18" rx="4" fill="#fbedd1" stroke="none" stroke-width="1"/><text x="191.5" y="824" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="8.5" font-weight="700" fill="#8a6200" text-anchor="middle">ADMIN</text></g>
+<line x1="0" y1="844" x2="240" y2="844" stroke="#dde2ea"/>
+<circle cx="32" cy="870" r="14" fill="#e6f6f9"/>
+<text x="32" y="874" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12" font-weight="700" fill="#22c1d9" text-anchor="middle">A</text>
+<text x="52" y="866" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#161c2b" text-anchor="start">Admin</text>
+<text x="52" y="880" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="10.5" font-weight="400" fill="#5b6472" text-anchor="start">admin</text>
+<text x="280" y="55" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="24" font-weight="700" fill="#161c2b" text-anchor="start">Guardrails</text>
+<text x="280" y="76" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="13" font-weight="400" fill="#5b6472" text-anchor="start">Repo groups, SLA rules, workflow templates, false-positive rules, policies, and risk scoring.</text>
+
+<text x="280" y="96" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="500" fill="#5b6472" text-anchor="start">Repo Groups</text>
+<text x="370.4" y="96" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="500" fill="#5b6472" text-anchor="start">SLA Rules</text>
+<text x="448.0" y="96" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="500" fill="#5b6472" text-anchor="start">Workflow Templates</text>
+<text x="583.2" y="96" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="500" fill="#5b6472" text-anchor="start">False Positive Rules</text>
+<text x="731.2" y="96" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="700" fill="#22c1d9" text-anchor="start">Policies</text>
+<text x="802.4000000000001" y="96" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="500" fill="#5b6472" text-anchor="start">Risk Scoring</text>
+<line x1="280" y1="116" x2="1160" y2="116" stroke="#dde2ea"/>
+<g><rect x="280" y="146" width="880" height="220" rx="10" fill="#ffffff" stroke="#dde2ea" stroke-width="1"/><g transform="translate(280,146)"><text x="20" y="24" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="13" font-weight="700" fill="#161c2b" text-anchor="start">Policies</text><text x="20" y="40" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="10.5" font-weight="400" fill="#5b6472" text-anchor="start">Which finding severities/types count as blocking for PR Guardrail.</text><rect x="20" y="58" width="16" height="16" rx="4" fill="#22c1d9" stroke="#dde2ea" stroke-width="1"/><text x="28" y="70" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11" font-weight="700" fill="#0d1b1e" text-anchor="middle">✓</text><text x="46" y="70" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="400" fill="#161c2b" text-anchor="start">Critical is blocking</text><rect x="20" y="88" width="16" height="16" rx="4" fill="#22c1d9" stroke="#dde2ea" stroke-width="1"/><text x="28" y="100" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11" font-weight="700" fill="#0d1b1e" text-anchor="middle">✓</text><text x="46" y="100" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="400" fill="#161c2b" text-anchor="start">High is blocking</text><rect x="20" y="118" width="16" height="16" rx="4" fill="#ffffff" stroke="#dde2ea" stroke-width="1"/><text x="46" y="130" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="400" fill="#161c2b" text-anchor="start">Medium is blocking</text><rect x="20" y="148" width="16" height="16" rx="4" fill="#ffffff" stroke="#dde2ea" stroke-width="1"/><text x="46" y="160" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="400" fill="#161c2b" text-anchor="start">Low is blocking</text><rect x="20" y="178" width="16" height="16" rx="4" fill="#ffffff" stroke="#dde2ea" stroke-width="1"/><text x="46" y="190" font-family="'Plus Jakarta Sans','Segoe UI',Arial,sans-serif" font-size="11.5" font-weight="400" fill="#161c2b" text-anchor="start">Informational is blocking</text></g></g>
+</svg>

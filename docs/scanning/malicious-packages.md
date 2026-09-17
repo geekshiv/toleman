@@ -11,6 +11,8 @@ POST /api/malicious-packages/scan?target_id=1
 GET  /api/malicious-packages
 ```
 
+![Malicious Packages overview](/img/screenshots/malicious-packages.svg)
+
 ## How a check runs
 
 **Scan a repository** does two things in one step: pulls the target's current dependency inventory from GitHub's dependency graph (falling back to whatever SBOM is already on file if a GitHub import isn't available for that repo), then compares every package against OSV's dataset. Re-running it later is worth doing even on a repo already checked, since OSV adds malicious-package records continuously; a package clean at scan time can be flagged after the fact.

@@ -11,7 +11,7 @@ sidebar_position: 3
 - **Jira**: base URL, API token, project key, issue type, and an auto-create severity threshold
 - **SIEM export**: a generic outbound webhook URL and an auto-export severity threshold
 
-![Admin: Global Integrations tab](/img/screenshots/admin-integrations.png)
+![Admin: Global Integrations tab](/img/screenshots/admin-integrations.svg)
 
 ## Secrets at rest
 

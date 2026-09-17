@@ -8,7 +8,7 @@ Toleman connects to GitHub via a **GitHub App** (not a PAT) for org-wide activit
 
 Once connected, the **Targets** page shows the live connection status at the top:
 
-![Targets: GitHub App connected, repos synced](/img/screenshots/targets-list.png)
+![Targets: GitHub App connected, repos synced](/img/screenshots/targets-list.svg)
 
 ## Create the App (manifest flow)
 
@@ -17,7 +17,7 @@ Once connected, the **Targets** page shows the live connection status at the top
 3. You're redirected to GitHub's manifest-flow page, where you approve and create the App against your org or personal account.
 4. GitHub redirects back with a temporary code; Toleman exchanges it for the App's credentials automatically.
 
-![Control Plane: Global Integrations, GitHub App connection card](/img/screenshots/admin-integrations.png)
+![Control Plane: Global Integrations, GitHub App connection card](/img/screenshots/admin-integrations.svg)
 
 ## Multiple Apps / installations
 

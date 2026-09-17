@@ -20,15 +20,17 @@ There's deliberately no per-target SLA override, only workspace/group.
 
 Manage rules: **Guardrails → SLA Rules**, or `/api/sla-rules` (SECURITY_ENGINEER-or-admin for writes).
 
-![Guardrails: SLA Rules tab](/img/screenshots/admin-sla-rules.png)
+![Guardrails: SLA Rules tab](/img/screenshots/admin-sla-rules.svg)
 
 ## Policy-as-code
 
 `/api/policies` (admin) defines which finding severities/types count as **blocking** for PR Guardrail, managed at **Guardrails → Policies**. This is a distinct axis from [enforcement mode](../github-integration/pr-guardrail.md#enforcement-modes): policy decides *what's* blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build.
 
-![Guardrails: Policies tab](/img/screenshots/admin-policies.png)
+![Guardrails: Policies tab](/img/screenshots/admin-policies.svg)
 
 ## The rest of Guardrails
+
+![Guardrails: Repo Groups tab](/img/screenshots/guardrails.svg)
 
 SLA Rules and Policies share the **Guardrails** page with three more tabs, each scoped to the current workspace:
 

@@ -10,7 +10,7 @@ PR Guardrail scans a pull request's diff for **net-new** findings only, and can 
 
 `POST /api/pr-guardrail/scan` runs a diff scan against a PR. Findings land in `PRGuardrailFinding`, a table kept separate from the main `Finding` table so PR-branch noise never pollutes your default-branch security posture. `GET /api/pr-guardrail/log` lists past scans; `GET /api/pr-guardrail/{pr_scan_id}/findings` lists one scan's findings. In the UI, this is the **PR History** page:
 
-![PR History page](/img/screenshots/pr-history.png)
+![PR History page](/img/screenshots/pr-history.svg)
 
 ## Enforcement modes
 
@@ -27,11 +27,13 @@ Every target, group, and workspace has an `enforcement_mode`: `block`, `alert`, 
 
 This is a distinct concept from **Policy** (below): policy decides *which* findings are severe enough to count as blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build. The dropdown lives right on a target's detail page:
 
-![Target detail: PR Guardrail enforcement dropdown](/img/screenshots/target-detail.png)
+![Target detail: PR Guardrail enforcement dropdown](/img/screenshots/target-detail.svg)
 
 ## Accept risk / ignore workflow
 
-A developer can request an ignore on a specific finding (`POST /api/pr-guardrail/findings/{id}/request-ignore`), from a PR comment or the PR's scan detail. Every pending request across the workspace lands in one place for review, the **Approval Queue** page (`GET /api/pr-guardrail/ignore-requests/pending`). A reviewer with the right role approves (`POST .../approve-ignore`) or rejects (`.../reject-ignore`) each request from there; a **History** tab on the same page lists past decisions. This is deliberately a two-person action, the developer who wants a finding ignored can't also be the one who approves it.
+A developer can request an ignore on a specific finding (`POST /api/pr-guardrail/findings/{id}/request-ignore`), from a PR comment or the PR's scan detail. Every pending request across the workspace lands in one place for review, the **Approval Queue** page (`GET /api/pr-guardrail/ignore-requests/pending`). ![Approval Queue: pending ignore requests](/img/screenshots/approval-queue.svg)
+
+A reviewer with the right role approves (`POST .../approve-ignore`) or rejects (`.../reject-ignore`) each request from there; a **History** tab on the same page lists past decisions. This is deliberately a two-person action, the developer who wants a finding ignored can't also be the one who approves it.
 
 An admin/security engineer can also override a whole PR's status directly: `POST /api/pr-guardrail/{pr_scan_id}/override`.
 

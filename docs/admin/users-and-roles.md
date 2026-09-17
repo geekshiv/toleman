@@ -12,7 +12,7 @@ Every `User` has one global `UserRole`: `admin`, `user`, `viewer`, `developer`, 
 
 Manage users: **Administration → Control Plane → Access → User Management**, or `/api/admin` (admin-only).
 
-![Admin: User Management tab](/img/screenshots/admin-users.png)
+![Admin: User Management tab](/img/screenshots/admin-users.svg)
 
 ## Workspace role
 
@@ -20,7 +20,7 @@ Manage users: **Administration → Control Plane → Access → User Management*
 
 Assign roles: **Administration → Workspaces**, or `/api/admin/workspace-roles`.
 
-![Admin: Workspace Roles tab](/img/screenshots/admin-workspace-roles.png)
+![Admin: Workspace Roles tab](/img/screenshots/admin-workspace-roles.svg)
 
 ## Auth
 
