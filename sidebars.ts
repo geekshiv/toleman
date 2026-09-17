@@ -28,6 +28,7 @@ const sidebars: SidebarsConfig = {
         'scanning/scanners',
         'scanning/api-discovery-and-scanning',
         'scanning/sbom',
+        'scanning/malicious-packages',
         'scanning/ai-security',
         'scanning/aibom',
       ],

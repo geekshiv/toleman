@@ -48,7 +48,7 @@ const config: Config = {
   themeConfig: {
     image: 'img/toleman-social-card.png',
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
     navbar: {

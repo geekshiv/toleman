@@ -12,12 +12,12 @@ Once connected, the **Targets** page shows the live connection status at the top
 
 ## Create the App (manifest flow)
 
-1. In Toleman, go to **Admin → Tooling → Global Integrations** and click **Connect GitHub**.
+1. In Toleman, go to **Administration → Control Plane → Tooling → Global Integrations** and click **Connect GitHub**.
 2. This calls `GET /api/github-app/manifest-data`, which builds a GitHub App manifest (name, webhook URL, required permissions; including `workflows: write`, needed for pipeline-integration PRs that add `.github/workflows/` files).
 3. You're redirected to GitHub's manifest-flow page, where you approve and create the App against your org or personal account.
 4. GitHub redirects back with a temporary code; Toleman exchanges it for the App's credentials automatically.
 
-![Admin: Global Integrations, GitHub App connection card](/img/screenshots/admin-integrations.png)
+![Control Plane: Global Integrations, GitHub App connection card](/img/screenshots/admin-integrations.png)
 
 ## Multiple Apps / installations
 

@@ -18,12 +18,21 @@ There's deliberately no per-target SLA override, only workspace/group.
 
 `GET /api/findings` and `/{id}` embed `sla_days`/`sla_violated` on every finding. A finding is only "in violation" while it's still open (states other than Mitigated/Accepted Risk/False Positive/Won't Fix, Reopened still counts as open). `GET /api/dashboard/sla-compliance` aggregates workspace-wide.
 
-Manage rules: **Admin → Scan Config → SLA Rules**, or `/api/sla-rules` (SECURITY_ENGINEER-or-admin for writes).
+Manage rules: **Guardrails → SLA Rules**, or `/api/sla-rules` (SECURITY_ENGINEER-or-admin for writes).
 
-![Admin: SLA Rules tab](/img/screenshots/admin-sla-rules.png)
+![Guardrails: SLA Rules tab](/img/screenshots/admin-sla-rules.png)
 
 ## Policy-as-code
 
-`/api/policies` (admin) defines which finding severities/types count as **blocking** for PR Guardrail, managed at **Admin → Scan Config → Policies**. This is a distinct axis from [enforcement mode](../github-integration/pr-guardrail.md#enforcement-modes): policy decides *what's* blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build.
+`/api/policies` (admin) defines which finding severities/types count as **blocking** for PR Guardrail, managed at **Guardrails → Policies**. This is a distinct axis from [enforcement mode](../github-integration/pr-guardrail.md#enforcement-modes): policy decides *what's* blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build.
 
-![Admin: Policies tab](/img/screenshots/admin-policies.png)
+![Guardrails: Policies tab](/img/screenshots/admin-policies.png)
+
+## The rest of Guardrails
+
+SLA Rules and Policies share the **Guardrails** page with three more tabs, each scoped to the current workspace:
+
+- **Repo Groups** — the groups referenced above; tag targets (`"production"`, `"pci-scope"`) to apply shared SLA/enforcement config to all of them at once, and set the workspace-level PR Guardrail fallback (Block / Alert / Disabled) for any target or group with nothing configured
+- **Workflow Templates** — reusable finding-response templates
+- **False Positive Rules** — standing suppression rules, distinct from a one-off triage decision on a single finding
+- **Risk Scoring** — the weights behind each target's priority score

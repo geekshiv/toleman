@@ -32,17 +32,20 @@ The list sorts by **most findings** by default, since that is the question the p
 
 ## The target detail page
 
-A target has three sub-pages, each with its own URL so it can be linked from a finding, a PR comment or a Slack alert:
+A target has six sub-pages, each with its own URL so it can be linked from a finding, a PR comment or a Slack alert:
 
 | Tab | Contents |
 |---|---|
 | **Overview** | Open findings by severity, last scan and which tools ran, default branch, risk weight, AI/ML detection status |
+| **Fix plan** | Suggested remediation order across this target's open findings |
 | **Vulnerabilities** | This target's findings, with the same triage, filtering and bulk actions as the main Findings page |
+| **Dependencies** | This target's SBOM component inventory |
+| **History** | Past scan runs for this target |
 | **Settings** | Groups, PR Guardrail enforcement, Active API Scanning, CI pipeline integration |
 
 ![Target detail page](/img/screenshots/target-detail.png)
 
-Link directly to a tab with `?tab=overview`, `?tab=vulnerabilities` or `?tab=settings`.
+Link directly to a tab with `?tab=overview`, `?tab=vulnerabilities` or `?tab=settings` (also `fix-plan`, `dependencies`, `history`).
 
 ## Groups & tags
 
@@ -54,6 +57,6 @@ Wherever you see a repo dropdown (SBOM, Reports, Dashboard scoping), Toleman use
 
 ## Workspace API key
 
-Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](./pipeline-integration.md); this is separate from your session login and from the GitHub App token. Manage it from **Settings → Workspace**:
+Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](./pipeline-integration.md); this is separate from your session login and from the GitHub App token. Manage it from **Administration → Workspaces**, alongside the workspace's name and per-workspace roles:
 
-![Settings: masked workspace API key with reveal/copy/rotate](/img/screenshots/settings-workspace.png)
+![Workspaces admin: masked API key with reveal/copy/rotate](/img/screenshots/admin-workspace-roles.png)

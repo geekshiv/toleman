@@ -14,6 +14,7 @@ Toleman runs scanners **natively** as subprocesses (not by re-parsing another to
 | **gosec** | SAST (Go) | Go-specific security issues, auto-detected from `Finding.tool` history or GitHub's `/languages` API |
 | **nuclei** | DAST | Active scanning of already-discovered API endpoints |
 | **Checkov / tfsec** | IaC | Terraform, Kubernetes, CloudFormation misconfiguration |
+| **Trivy (license mode)** | License | Dependency license compliance, separate run from Trivy's SCA mode |
 | **ModelScan** | AI/ML | Unsafe deserialization in serialized model files |
 | **semgrep-llm** | AI/ML | Toleman's OWASP LLM Top 10 ruleset, shipped in-repo |
 
@@ -35,9 +36,11 @@ A target's own detail page has one button per tool instead, for a quick one-off 
 
 ## Tool health
 
-`GET /api/tools/health` reports real installed versions for all four core tools, checked live inside the backend container/process; not a static capability list. Visible at **Admin → Tooling → Tools Health**:
+`GET /api/tools/health` reports real installed versions for every scanner, checked live inside the backend container/process; not a static capability list. Visible at **Administration → Control Plane → Tooling → Tools Health**:
 
-![Admin: Tools Health tab, real installed versions](/img/screenshots/admin-tools-health.png)
+![Control Plane: Tools Health tab, real installed versions](/img/screenshots/admin-tools-health.png)
+
+The neighboring **Tool Marketplace** tab lists every supported tool across SAST, SCA, secrets, container, IaC, license, and AI/ML scanning, each with a copyable install command and per-workspace usage, and a **Recheck all** action that re-runs the health check on demand instead of waiting for it to refresh on its own.
 
 ## How results become Findings
 

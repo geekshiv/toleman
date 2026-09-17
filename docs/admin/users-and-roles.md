@@ -10,7 +10,7 @@ Toleman uses a two-layer role system.
 
 Every `User` has one global `UserRole`: `admin`, `user`, `viewer`, `developer`, or `security_engineer`. **Admins bypass all workspace scoping**; they see every workspace's data with no filtering.
 
-Manage users: **Admin → Access → User Management**, or `/api/admin` (admin-only).
+Manage users: **Administration → Control Plane → Access → User Management**, or `/api/admin` (admin-only).
 
 ![Admin: User Management tab](/img/screenshots/admin-users.png)
 
@@ -18,7 +18,7 @@ Manage users: **Admin → Access → User Management**, or `/api/admin` (admin-o
 
 `WorkspaceMembership` (user_id, workspace_id, `WorkspaceRole`) layers a **workspace-scoped** role on top of the global one. Non-admin visibility on every GET/list endpoint over workspace-owned resources (targets, findings, scans, etc.) is filtered through `accessible_workspace_ids()`, a user only sees workspaces they're a member of.
 
-Assign roles: **Admin → Access → Workspace Roles**, or `/api/admin/workspace-roles`.
+Assign roles: **Administration → Workspaces**, or `/api/admin/workspace-roles`.
 
 ![Admin: Workspace Roles tab](/img/screenshots/admin-workspace-roles.png)
 

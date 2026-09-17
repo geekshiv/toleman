@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Platform Config
 
-**Admin → Global Integrations** tab (`/api/config`, admin-only) holds every cross-cutting integration setting:
+**Administration → Control Plane → Tooling → Global Integrations** (`/api/config`, admin-only) holds every cross-cutting integration setting:
 
 - **AI provider**: Anthropic or OpenAI-compatible endpoint + key, used by [AI Analysis](../findings/enrichment-and-ai-analysis.md)
 - **Slack**: incoming webhook URL for notifications
@@ -55,3 +55,9 @@ Secret fields (GitHub App secrets, the OpenAI-compatible provider key, Slack web
   "first_seen": "2026-08-15T14:00:00Z"
 }
 ```
+
+## Scheduled scans
+
+**Administration → Control Plane → Scheduling** sets, per workspace, how often a **full scan** (every enabled scanner against the default branch) and **Active API scan** (probing already-discovered endpoints) run when nobody triggers one manually. A target with its own schedule on its detail page overrides the workspace default; a target with none follows it.
+
+An Active API scan only reaches targets that are active, have an API base URL configured, and have discovered endpoints to probe — anything else is skipped silently. Scheduled runs go through the same queue as manual ones, at the same concurrency; shortening the cadence on a large workspace makes every run compete for that one queue rather than making results arrive sooner. Requires the Celery beat process to be running.
