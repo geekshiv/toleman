@@ -103,7 +103,7 @@ npm run dev
 
 Open http://localhost:3000, redirects to `/login`.
 
-![Login screen](/toleman/img/screenshots/login.svg)
+![Login screen](/toleman/img/screenshots/login.png)
 
 ## First steps after signing in
 
