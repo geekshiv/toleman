@@ -60,3 +60,12 @@
 :root {
 	--sl-shadow-sm: none;
 }
+
+/* The right-hand "On this page" panel sits flush against the prose
+   column by default, no border and only its own internal padding, so it
+   reads as cramped rather than a distinct rail. Give it a real gutter
+   and a hairline divider to separate it from the content. */
+.right-sidebar-panel {
+	padding-inline-start: 2.5rem;
+	border-inline-start: 1px solid var(--sl-color-hairline);
+}
