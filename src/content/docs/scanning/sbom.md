@@ -5,7 +5,7 @@ description: "Toleman generates a Software Bill of Materials per target, org-wid
 
 Toleman generates a Software Bill of Materials per target, org-wide, or for a repo group; async, same tracking-row + poll pattern as scans.
 
-![SBOM & OSS Vulns page](/toleman/img/screenshots/sbom.svg)
+![SBOM & OSS Vulns page](/toleman/img/screenshots/sbom.png)
 
 ```bash
 POST /api/sbom/run?target_id=1

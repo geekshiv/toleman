@@ -11,7 +11,7 @@ Every `User` has one global `UserRole`: `admin`, `user`, `viewer`, `developer`, 
 
 Manage users: **Administration → Control Plane → Access → User Management**, or `/api/admin` (admin-only).
 
-![Admin: User Management tab](/toleman/img/screenshots/admin-users.svg)
+![Admin: User Management tab](/toleman/img/screenshots/admin-users.png)
 
 ## Workspace role
 
@@ -19,7 +19,7 @@ Manage users: **Administration → Control Plane → Access → User Management*
 
 Assign roles: **Administration → Workspaces**, or `/api/admin/workspace-roles`.
 
-![Admin: Workspace Roles tab](/toleman/img/screenshots/admin-workspace-roles.svg)
+![Admin: Workspace Roles tab](/toleman/img/screenshots/admin-workspace-roles.png)
 
 ## Auth
 

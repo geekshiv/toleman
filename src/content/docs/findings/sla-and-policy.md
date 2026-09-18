@@ -19,17 +19,17 @@ There's deliberately no per-target SLA override, only workspace/group.
 
 Manage rules: **Guardrails → SLA Rules**, or `/api/sla-rules` (SECURITY_ENGINEER-or-admin for writes).
 
-![Guardrails: SLA Rules tab](/toleman/img/screenshots/admin-sla-rules.svg)
+![Guardrails: SLA Rules tab](/toleman/img/screenshots/admin-sla-rules.png)
 
 ## Policy-as-code
 
 `/api/policies` (admin) defines which finding severities/types count as **blocking** for PR Guardrail, managed at **Guardrails → Policies**. This is a distinct axis from [enforcement mode](/toleman/github-integration/pr-guardrail/#enforcement-modes): policy decides *what's* blocking; enforcement mode decides whether a PR carrying blocking findings actually fails the build.
 
-![Guardrails: Policies tab](/toleman/img/screenshots/admin-policies.svg)
+![Guardrails: Policies tab](/toleman/img/screenshots/admin-policies.png)
 
 ## The rest of Guardrails
 
-![Guardrails: Repo Groups tab](/toleman/img/screenshots/guardrails.svg)
+![Guardrails: Repo Groups tab](/toleman/img/screenshots/guardrails.png)
 
 SLA Rules and Policies share the **Guardrails** page with three more tabs, each scoped to the current workspace:
 

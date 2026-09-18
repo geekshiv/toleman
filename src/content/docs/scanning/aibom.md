@@ -17,7 +17,7 @@ Detected references include Hugging Face models (`from_pretrained`, `hf_hub_down
 
 **SBOM & OSS Vulns** → select a target → **AI Bill of Materials** tab. Export produces a CycloneDX 1.6 document validated against the published schema.
 
-![SBOM page](/toleman/img/screenshots/sbom.svg)
+![SBOM page](/toleman/img/screenshots/sbom.png)
 
 ## Unknown provenance is stated, never assumed
 

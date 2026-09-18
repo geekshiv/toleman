@@ -10,7 +10,7 @@ POST /api/malicious-packages/scan?target_id=1
 GET  /api/malicious-packages
 ```
 
-![Malicious Packages overview](/toleman/img/screenshots/malicious-packages.svg)
+![Malicious Packages overview](/toleman/img/screenshots/malicious-packages.png)
 
 ## How a check runs
 

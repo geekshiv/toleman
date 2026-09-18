@@ -10,7 +10,7 @@ description: "Administration → Control Plane → Tooling → Global Integratio
 - **Jira**: base URL, API token, project key, issue type, and an auto-create severity threshold
 - **SIEM export**: a generic outbound webhook URL and an auto-export severity threshold
 
-![Admin: Global Integrations tab](/toleman/img/screenshots/admin-integrations.svg)
+![Admin: Global Integrations tab](/toleman/img/screenshots/admin-integrations.png)
 
 ## Secrets at rest
 

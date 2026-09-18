@@ -21,7 +21,7 @@ POST /api/targets
 
 Or use the **Targets** page in the UI, which drives the same endpoint. `criticality_weight` feeds priority scoring (see [Findings Lifecycle & Scoring](/toleman/findings/lifecycle-and-scoring/)) and is shown per row as *Risk N/5*.
 
-![Targets: repository inventory](/toleman/img/screenshots/targets-list.svg)
+![Targets: repository inventory](/toleman/img/screenshots/targets-list.png)
 
 Each row leads with the number that matters: open findings on the default branch, with critical (`C`) and high (`H`) counts beside it. A repository that has never been scanned shows **not scanned** rather than a zero; nobody looked, which is not the same as clean.
 
@@ -42,7 +42,7 @@ A target has six sub-pages, each with its own URL so it can be linked from a fin
 | **History** | Past scan runs for this target |
 | **Settings** | Groups, PR Guardrail enforcement, Active API Scanning, CI pipeline integration |
 
-![Target detail page](/toleman/img/screenshots/target-detail.svg)
+![Target detail page](/toleman/img/screenshots/target-detail.png)
 
 Link directly to a tab with `?tab=overview`, `?tab=vulnerabilities` or `?tab=settings` (also `fix-plan`, `dependencies`, `history`).
 
@@ -58,4 +58,4 @@ Wherever you see a repo dropdown (SBOM, Reports, Dashboard scoping), Toleman use
 
 Each target's workspace has an API key (`GET /api/targets/{id}/workspace-key`, regenerate via `POST .../workspace-key/regenerate`) used to authenticate CI/CD pushes to the [ingest endpoint](/toleman/github-integration/pipeline-integration/); this is separate from your session login and from the GitHub App token. Manage it from **Administration → Workspaces**, alongside the workspace's name and per-workspace roles:
 
-![Workspaces admin: masked API key with reveal/copy/rotate](/toleman/img/screenshots/admin-workspace-roles.svg)
+![Workspaces admin: masked API key with reveal/copy/rotate](/toleman/img/screenshots/admin-workspace-roles.png)

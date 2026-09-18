@@ -113,4 +113,4 @@ Open http://localhost:3000, redirects to `/login`.
 
 Once you're in, the dashboard is your home base:
 
-![Security Overview dashboard](/toleman/img/screenshots/dashboard.svg)
+![Security Overview dashboard](/toleman/img/screenshots/dashboard.png)

@@ -22,9 +22,9 @@ An explicit per-target toggle was considered and rejected: someone has to rememb
 
 Detection records **why** it fired, visible in the tooltip on the AI/ML badge; a bare flag is not contestable. A manual override is available in both directions and wins over detection, while detection keeps updating underneath it, so "auto-detected" and "manually set" stay distinguishable.
 
-![Targets list showing the AI/ML badge](/toleman/img/screenshots/targets-list.svg)
+![Targets list showing the AI/ML badge](/toleman/img/screenshots/targets-list.png)
 
-![AI Security page: flagged repos and AI Bill of Materials](/toleman/img/screenshots/ai-security.svg)
+![AI Security page: flagged repos and AI Bill of Materials](/toleman/img/screenshots/ai-security.png)
 
 ## Model-file scanning (ModelScan)
 
